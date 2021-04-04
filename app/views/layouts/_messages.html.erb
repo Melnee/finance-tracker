@@ -1,0 +1,16 @@
+<% flash.each do |name, msg|%>
+    <%# if the name of the message object passed in is notice, do success (green), if not, do danger %>
+     <div class="alert alert-<%= name == "notice" ? "success" : "danger" %> alert-dismissible fade show" role="alert">
+        <div style = "display: flex; justify-content: space-between">
+            <h2 class="alert-heading">
+                <%= msg%>
+            </h2>
+            <button type="button" class="close bg-transparent border-0" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true" ><strong>x</strong></span>
+            </button>
+        </div>
+    </div>
+<% end %>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

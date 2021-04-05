@@ -6,7 +6,10 @@ class Stock < ApplicationRecord
             endpoint: 'https://sandbox.iexapis.com/v1'
         )
         #now return the price
-        return client.price(ticker_symbol)
+        #inside the class, the Stock.new is implied, here you only have to write new
+        #in the name param, you're finding the company by the ticker symbol
+        #and then chaining that found company to get it's full name
+        new(ticker: ticker_symbol, name: client.company(ticker_symbol).company_name,  last_price: client.price(ticker_symbol))
     end
 
 end

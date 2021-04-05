@@ -23,6 +23,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 #devise bootstrap views
 gem 'devise-bootstrap-views', '~> 1.0'
+#iex client
+gem 'iex-ruby-client'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

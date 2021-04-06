@@ -1,0 +1,8 @@
+<h1>My Friends</h1>
+
+<%= render 'layouts/messages' %>
+
+
+<% if !@friends.empty?%>
+    <%= render 'friends/list' %>
+<% end %>

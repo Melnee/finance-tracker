@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   get "my_portfolio", to: 'users#my_portfolio'
   get 'search_stock', to: 'stocks#search'
   get 'user_stocks', to: 'user_stocks#create'
-
+  get '/user_stock_delete/:id', to: 'user_stocks#destroy', as: 'user_stocks_delete'
 end

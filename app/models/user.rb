@@ -27,4 +27,11 @@ class User < ApplicationRecord
     under_stock_limit? && !stock_already_tracked?(ticker_symbol)
   end
 
+  def full_name
+    #return the first name and last name in a string if self has first_name or last_name
+    return "#{first_name} #{last_name}" if first_name || last_name
+    #else, just return this string that says anonymous
+    "Anonymous" 
+  end
+
 end

@@ -7,8 +7,14 @@
                         <td><strong>Name: </strong><%= friend.full_name %></td>
                         <td><strong>Email: </strong><%= friend.email %></td>
                         <td>
-                            <strong>Profile: </strong><%= link_to "View Profile", "#", class: "btn btn-sm, btn-success" %>
-                            <%= link_to "Add Friend", '#', class: "btn btn-xs btn-success" %>
+                            <strong>Actions: </strong><%= link_to "View Profile", user_path(friend), class: "btn btn-sm btn-success" %>
+                            <% if !current_user.friends.include?(friend) %>
+                                <%= link_to "Add Friend", add_friend_url(friend), class: "btn btn-sm btn-success" %>
+                            <% else %>
+                                <span class = "badge badge-secondary">
+                                    You are friends
+                                </span>
+                            <% end %>
                         </td>
                     </tr>
                 <% end %>

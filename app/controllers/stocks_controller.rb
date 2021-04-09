@@ -1,5 +1,6 @@
 class StocksController < ApplicationController
     def search
+        @user = current_user
         if params[:stock].present?
             @stock = Stock.new_lookup(params[:stock])
             if @stock

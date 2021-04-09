@@ -16,7 +16,7 @@
                     <td><%= friend.email%></td>
                     <td><%= friend.first_name%></td>
                     <td><%= friend.last_name%></td>
-                    <td><%= link_to "Stop Following", my_portfolio_path(friend), class: "btn btn-sm btn-warning"%></td>
+                    <td><%= link_to "Stop Following", unfriend_url(friend), class: "btn btn-sm btn-warning"%></td>
                 </tr>
             <% end %>
         </tbody>

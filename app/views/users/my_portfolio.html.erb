@@ -18,5 +18,8 @@
     <%end%>
 </div>
 <%= render 'users/result'%>
-<%= render 'stocks/list'%>
+
+<% if !@tracked_stocks.empty?%>
+    <%= render 'stocks/list'%>
+<% end %>
 

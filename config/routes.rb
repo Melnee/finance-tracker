@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   get 'search_friend', to: 'users#search', as: 'search_friend'
   get '/unfriend/:id', to: 'friendships#unfriend', as: 'unfriend'
   get '/add_friend/:id', to: 'friendships#add_friend', as: 'add_friend'
+
+  resources :users, only: [:show]
 end

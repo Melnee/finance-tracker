@@ -67,6 +67,10 @@ class User < ApplicationRecord
     to_send_back
   end
   
-
+  def except_current_user(users)
+    #use the reject method to loop through the users array, and and if any of their ids match the current user, then take them out 
+    users.reject! { |user| user.id == self.id }
+    
+  end
 
 end

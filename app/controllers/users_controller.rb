@@ -9,8 +9,10 @@ class UsersController < ApplicationController
 
   def search
     if params[:friend].present?
-      @friend = User.where("first_name like?", params[:friend]).first
-      if @friend
+      @friends_result = User.search(params[:friend])
+      #call the except_current_user method you made in the User.rb class to take out the current user from that array
+      @friends = current_user.except_current_user(@friends_result)
+      if @friends_result
           @friends = current_user.friends
           render 'users/my_friends'
       else 

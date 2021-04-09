@@ -1,0 +1,8 @@
+<% if @friend %>
+    <div class = "card card-header results-block">
+        <strong>First Name: </strong><%= @friend.first_name %>
+        <strong>Last Name: </strong><%= @friend.last_name %>
+        <strong>Email: </strong><%= @friend.email %>
+        <%= link_to "Add Friend", '#', class: "btn btn-xs btn-success" %>
+    </div>
+<% end %>

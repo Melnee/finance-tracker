@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get 'search_stock', to: 'stocks#search'
   get 'user_stocks', to: 'user_stocks#create'
   get '/user_stock_delete/:id', to: 'user_stocks#destroy', as: 'user_stocks_delete'
+  get 'my_friends', to: 'users#my_friends'
+  get 'search_friend', to: 'users#search', as: 'search_friend'
 end

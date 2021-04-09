@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get '/user_stock_delete/:id', to: 'user_stocks#destroy', as: 'user_stocks_delete'
   get 'my_friends', to: 'users#my_friends'
   get 'search_friend', to: 'users#search', as: 'search_friend'
+  get '/unfriend/:id', to: 'friendships#unfriend', as: 'unfriend'
+  get '/add_friend/:id', to: 'friendships#add_friend', as: 'add_friend'
 end

@@ -1,5 +1,14 @@
 class FriendshipsController < ApplicationController
     def add_friend
+        friend = User.find(params[:id])
+        #then create a friendship relationship with the friend you found
+        current_user.friendships.build(friend_id: friend.id)
+        if current_user.save
+            flash[:notice] = "You are now following #{friend.full_name}"
+        else
+            flash[:alert] = "There was something wrong with the tracking request"
+        end
+        redirect_to my_friends_path
     end
 
     def unfriend
